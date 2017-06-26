@@ -10,10 +10,8 @@ class Backpack
   end
 
   def prepare
-    weather = @attributes[:weather]
-    day_of_week = @attributes[:day_of_week]
-
     pack_for_mild_weather
+    
     if weather == 'rainy'
       @items << 'umbrella'
     elsif weather == 'cold'
@@ -28,6 +26,14 @@ class Backpack
   def pack_for_mild_weather
     @items << 'pants'
     @items << 'shirt'
+  end
+
+  def weather
+    @attributes[:weather]
+  end
+
+  def day_of_week
+    @attributes[:day_of_week]
   end
   # Prints a summary packing list for Melinda's backpack
   def packing_list
